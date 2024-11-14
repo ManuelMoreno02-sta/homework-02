@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSCI 1101 Conditional Statements and Loops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/c05.css">
+    <link rel="stylesheet" href="css/c05.css">
+
+</head>
+<body>
+    <div id="page">
+        <h1 id="header">List</h1>
+        <h2>Buy groceries</h2>
+        <ul>
+            <li>fresh figs</li>
+            <li>bacon</li>
+            <li>ketchup</li>
+            <li>pine nuts</li>
+            <li>honey</li>
+            <li>kale</li>
+            <li>balsamic vinegar</li>
+        </ul>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script>
+        // Select all list items and the heading element
+        const listItems = document.querySelectorAll('li');
+        const heading = document.querySelector('h2');
+
+        // Variables for the special items and total count
+        const specialItems = ['fresh figs', 'kale', 'honey'];
+        let itemCount = listItems.length;
+
+        // Loop through each item in the list
+        listItems.forEach(item => {
+            // Check if the item's text matches any special items
+            if (specialItems.includes(item.textContent.toLowerCase())) {
+                item.className = 'cool'; // Apply the 'cool' class
+            }
+        });
+
+        // Update the heading text with the item count
+        heading.textContent = `Buy groceries (${itemCount} items)`;
+    </script>
+</body>
+</html>
